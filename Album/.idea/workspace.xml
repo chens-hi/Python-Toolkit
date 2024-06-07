@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b28c126-23d6-4643-9893-b70bd159b27a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Album.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Album.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/albumtoolkit.py" beforeDir="false" afterPath="$PROJECT_DIR$/albumtoolkit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,11 +28,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python.albumtoolkit.executor": "Debug",
+    "Python.Debug.executor": "Debug",
+    "Python.albumtoolkit.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Python-Toolkit/Album",
+    "last_opened_file_path": "D:/Python-Toolkit/Album/albumtoolkit.py",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -43,6 +47,32 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Python-Toolkit\Album" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Debug" type="PythonConfigurationType" factoryName="Python">
+      <module name="Album" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (Python-Toolkit)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/albumtoolkit.py" />
+      <option name="PARAMETERS" value="--wait_organize_folder $USER_HOME$/Videos/Captures --album_storage_folder $USER_HOME$/Desktop/Project" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -67,7 +97,7 @@
       <workItem from="1717675583298" duration="776000" />
       <workItem from="1717676726335" duration="60000" />
       <workItem from="1717676794808" duration="212000" />
-      <workItem from="1717738549362" duration="3404000" />
+      <workItem from="1717738549362" duration="7565000" />
     </task>
     <servers />
   </component>
@@ -75,6 +105,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Album$albumtoolkit.coverage" NAME="albumtoolkit 覆盖结果" MODIFIED="1717676299222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Album$albumtoolkit.coverage" NAME="albumtoolkit 覆盖结果" MODIFIED="1717746312158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Album$Debug.coverage" NAME="Debug 覆盖结果" MODIFIED="1717747863999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

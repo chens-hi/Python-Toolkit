@@ -3,9 +3,8 @@ import stat
 import time
 import shutil
 import argparse
-import ffmpeg
 import filetype
-import exifread
+import exiftool
 
 
 def get_album_time(file_path):
@@ -17,32 +16,32 @@ def get_album_time(file_path):
 
     if os.path.isfile(file_path):
         if filetype.is_image(file_path):
-            with open(file_path, mode="rb") as reader:
-                meta_object = exifread.process_file(reader)
-                if meta_object is not None:
-                    meta_time = meta_object.get("EXIF DateTimeOriginal")
-                    if meta_time is not None:
-                        create_time = time.strptime(str(meta_time), "%Y:%m:%d %H:%M:%S")
-                        return time.mktime(create_time)
-                    else:
-                        return os.path.getmtime(file_path)
-
-            return os.path.getmtime(file_path)
-        elif filetype.is_video(file_path):
-            meta_object = ffmpeg.probe(file_path)
-            if meta_object is not None:
-                meta_format = meta_object.get("format")
-                if meta_format is not None:
-                    meta_tags = meta_format.get("tags")
-                    if meta_tags is not None:
-                        meta_time = meta_tags.get("creation_time")
-                        if meta_time is not None:
-                            create_time = time.strptime(str(meta_time), "%Y-%m-%dT%H:%M:%S.%fZ")
-                            return time.mktime(create_time) - time.timezone
-                        else:
+            with exiftool.ExifToolHelper() as exif:
+                meta_list = exif.get_metadata(file_path)
+                for meta in meta_list:
+                    date_string = meta.get("EXIF:DateTimeOriginal")
+                    if date_string:
+                        try:
+                            date_time = time.strptime(str(date_string), "%Y:%m:%d %H:%M:%S")
+                        except ValueError:
                             return os.path.getmtime(file_path)
-        else:
-            return 0.0
+                        else:
+                            return time.mktime(date_time)
+            return os.path.getmtime(file_path)
+
+        if filetype.is_video(file_path):
+            with exiftool.ExifToolHelper() as exif:
+                meta_list = exif.get_metadata(file_path)
+                for meta in meta_list:
+                    date_string = meta.get("QuickTime:MediaCreateDate")
+                    if date_string:
+                        try:
+                            date_time = time.strptime(str(date_string), "%Y:%m:%d %H:%M:%S")
+                        except ValueError:
+                            return os.path.getmtime(file_path)
+                        else:
+                            return time.mktime(date_time)
+            return os.path.getmtime(file_path)
 
     return 0.0
 
